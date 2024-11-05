@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name">
+    <br>
+    <br>
+    <input type="text" id="fathername">
+    <br>
+    <br>
+    <input type="text" id="email">
+    <br>
+    <br>
+    <input type="text" id="contect">
+    <br>
+    <br>
+    <button onclick="onsave()">submit</button>
+    <br>
+    <br>
+    <a href="table.html">tabl</a>
+
+
+
+    <script>
+        function onsave(){
+          var name =  document.getElementById('name').value;
+          var fathername =  document.getElementById('fathername').value;
+          var email =  document.getElementById('email').value;
+          var contect =  document.getElementById('contect').value;
+
+
+            var nerrecord=new Array();
+            nerrecord= JSON.parse(localStorage.getItem('user'))?JSON.parse(localStorage.getItem('user')):[];
+            nerrecord.push({
+                name : 'name',
+                fathername : 'fathername',
+                email : 'email',
+                contect: 'contect',
+            })
+
+            localStorage.setItem('user',JSON.stringify(nerrecord))
+        }
+    </script>
+
+</body>
+</html>

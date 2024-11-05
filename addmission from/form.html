@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Admission Data</title>
+</head>
+<body>
+    <h2>Admission Data</h2>
+    <table id="schooldata" border="1">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Father Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Date</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        function displayData() {
+            var table = document.getElementById('schooldata').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+
+            newRow.insertCell(0).innerText = localStorage.getItem('name');
+            newRow.insertCell(1).innerText = localStorage.getItem('fathername');
+            newRow.insertCell(2).innerText = localStorage.getItem('email');
+            newRow.insertCell(3).innerText = localStorage.getItem('phonenumber');
+            newRow.insertCell(4).innerText = localStorage.getItem('date');
+            newRow.insertCell(5).innerText = localStorage.getItem('course');
+            }
+            
+
+            
+
+        window.onload = displayData; 
+    </script>
+</body>
+</html>
